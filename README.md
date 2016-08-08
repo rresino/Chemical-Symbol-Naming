@@ -3,7 +3,7 @@ Java Code Challenge: Chemical Symbol Naming
 
 This is the answer of the "Java Code Challenge: Chemical Symbol Naming-Part One"
 
-https://dzone.com/articles/java-code-challenge-chemical-symbol-naming-part-on?utm_source=java%20code%20challenge&utm_medium=emaiol&utm_campaign=jcc%202016-08-08
+https://dzone.com/articles/java-code-challenge-chemical-symbol-naming-part-on
 
 Requisites:
 - JDK 1.8.X
