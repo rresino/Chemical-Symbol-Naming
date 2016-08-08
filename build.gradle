@@ -1,0 +1,77 @@
+
+// Apply the java plugin to add support for Java
+apply plugin: 'java'
+
+// In this section you declare where to find the dependencies of your project
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+// In this section you declare the dependencies for your production and test code
+dependencies {
+    testCompile 'junit:junit:4.12'
+}
+
+jar {
+    manifest {
+        attributes (
+        	'Implementation-Version': '1.0',
+        	'Implementation-Title': 'Java Code Challenge: Chemical Symbol Naming',
+			'Implementation-Vendor': 'Rubén Resino')
+    }
+}
+
+task saludation {
+	
+	group 'Chemical Symbol Naming'
+	
+	doLast {
+		println ''
+		println 'Java Code Challenge: Chemical Symbol Naming'
+		println 'by Rubén Resino'
+		println ''
+	}
+}
+
+task executeValidateSymbolOfelement(type: JavaExec) {
+	dependsOn "saludation"
+	group 'Chemical Symbol Naming'
+
+	classpath = sourceSets.main.runtimeClasspath
+	main = 'com.rresino.challenge.chemicalsymbolnaming.main.ValidateSymbolOfElementTask'
+	if (System.getProperty("exec.args"))
+		args System.getProperty("exec.args").split()
+	
+	doLast {
+		println ''
+	}
+}
+
+task executeNumberOfSymbolsOfElement(type: JavaExec) {
+	dependsOn "saludation"
+	group 'Chemical Symbol Naming'
+
+	classpath = sourceSets.main.runtimeClasspath
+	main = 'com.rresino.challenge.chemicalsymbolnaming.main.FindNumberOfSymbolByElementTask'
+	if (System.getProperty("exec.args"))
+		args System.getProperty("exec.args")
+	
+	doLast {
+		println ''
+	}
+}
+
+task executeFindFirstSymbolOfElement(type: JavaExec) {
+	dependsOn "saludation"
+	group 'Chemical Symbol Naming'
+
+	classpath = sourceSets.main.runtimeClasspath
+	main = 'com.rresino.challenge.chemicalsymbolnaming.main.FindSortedSymbolTask'
+	if (System.getProperty("exec.args"))
+		args System.getProperty("exec.args")
+	
+	doLast {
+		println ''
+	}
+}
